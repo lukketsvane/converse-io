@@ -28,7 +28,7 @@ header {
 
 aside {
     background-color: #FF90E8;
-    width: 30%;
+    width: 35%;
     padding: 20px;
     margin: 0;
     display: flex;
@@ -38,7 +38,7 @@ aside {
 
 #conversation {
     background: #fff;
-    width: 70%;
+    width: 65%;
     margin: 0;
     overflow-y: auto;
     padding: 20px;
@@ -69,17 +69,18 @@ aside {
     display: block;
 }
 
-input[type="text"],
-input[type="number"],
-button {
-    width: 100%;
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group button {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: calc(100% - 20px); /* Full width minus padding */
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0; /* Adjust margin as needed */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-button {
+.form-group button {
     cursor: pointer;
     background-color: #333;
     color: white;
