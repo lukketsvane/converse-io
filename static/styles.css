@@ -1,0 +1,89 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+aside {
+    background-color: #FF90E8;
+    padding: 20px;
+    width: 30%;
+}
+
+.intro-text p {
+    margin: 0 0 20px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+#conversation {
+    background: #fff;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    max-height: 600px;
+    margin-left: 20px;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.pirate {
+    background-color: #fdd835;
+    color: black;
+}
+
+.mermaid {
+    background-color: #4fc3f7;
+    color: white;
+}

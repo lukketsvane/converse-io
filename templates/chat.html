@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Pirate and Mermaid</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div>
+        <form id="chatForm">
+            Topic: <input type="text" name="topic"><br>
+            Number of Messages: <input type="number" name="message_count"><br>
+            <button type="submit">Start Conversation</button>
+        </form>
+        <div id="conversation"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var socket = io();
+            $('#chatForm').submit(function(e){
+                e.preventDefault();
+                socket.emit('start_conversation', {
+                    topic: $('input[name="topic"]').val(),
+                    message_count: $('input[name="message_count"]').val()
+                });
+                $('input[name="topic"]').val('');
+                $('input[name="message_count"]').val('');
+                return false;
+            });
+            socket.on('message', function(msg) {
+                var messageType = msg.messageType;
+                var text = msg.text;
+                var className = messageType === "pirate" ? "message pirate" : "message mermaid";
+                $('#conversation').append('<div class="' + className + '">' + text.replace(/\\n/g, "<br>") + '</div>');
+            });
+        });
+    </script>
+</body>
+</html>
