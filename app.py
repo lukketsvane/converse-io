@@ -12,6 +12,7 @@ socketio = SocketIO(app)
 client = OpenAI()
 client.api_key = os.environ.get('OPENAI_API_KEY')
 
+# Default assistant parameters
 assistant_1_params = {
     'name': "Pirate",
     'instructions': "You are a mean pirate.",
@@ -41,6 +42,13 @@ def configure_assistants(json):
 def handle_conversation(json):
     topic = json['topic']
     message_count = int(json['message_count'])
+
+    # Update assistant parameters based on user input
+    assistant_1_params['name'] = json['assistant_1']['name']
+    assistant_1_params['instructions'] = json['assistant_1']['instructions']
+    assistant_2_params['name'] = json['assistant_2']['name']
+    assistant_2_params['instructions'] = json['assistant_2']['instructions']
+
     converse(assistant_1_params, assistant_2_params, topic, message_count)
 
 def get_last_assistant_message(thread_id):
