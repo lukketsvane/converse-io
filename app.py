@@ -11,11 +11,9 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 client = OpenAI()
 client.api_key = os.environ.get('OPENAI_API_KEY')
-
 @app.route('/', methods=['GET'])
 def index():
   return render_template('chat.html')
-
 @socketio.on('start_conversation')
 def handle_conversation(json):
   topic = json['topic']
