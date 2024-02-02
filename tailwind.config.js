@@ -8,15 +8,15 @@ module.exports = {
       extend: {
         colors: {
           pink: '#FF90E8',
-          'baby-blue': '#90A8ED',
+          babyblue: '#90A8ED',
           yellow: '#F1F333',
           teal: '#23A094',
           violet: '#B23386',
           orange: '#E2442F',
           red: '#98282A',
           dimgrey: '#78716C',
-          'smoke-white': '#F4F4F0',
-          'yellow-dark': '#FFC900',
+          smokewhite: '#F4F4F0',
+          yellowdark: '#FFC900',
           black: '#000000',
           white: '#FFFFFF',
         },
